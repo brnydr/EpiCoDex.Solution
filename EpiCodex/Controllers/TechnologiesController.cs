@@ -65,7 +65,7 @@ public class TechnologiesController: Controller
   public ActionResult DeleteConfirmed(int id)
   {
     Technology tech = _db.Technologies.FirstOrDefault(tech => tech.TechnologyId == id);
-    _db.Tags.Remove(tech);
+    _db.Technologies.Remove(tech);
     _db.SaveChanges();
     return RedirectToAction("Index");
   }

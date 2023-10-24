@@ -17,7 +17,7 @@ else
 {
   <h4>Projects associated with this technology:</h4>
   <ul>
-  @foreach(ProjecTechnology join in Model.JoinEntities)
+  @foreach(ProjectTechnology join in Model.JoinEntities)
   {
     <li>@join.Item.Title</li>
     @using (Html.BeginForm("DeleteJoin", "Technologies"))
