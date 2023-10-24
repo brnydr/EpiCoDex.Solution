@@ -1,0 +1,35 @@
+@{
+  Layout = "_Layout";
+}
+
+@using EpiCodex.Models
+@model EpiCodex.Models.Technology
+
+<h2>Tag Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Type): @Html.DisplayFor(model => model.Type)</h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This technology is not associated with any projects</p>
+}
+else
+{
+  <h4>Projects associated with this technology:</h4>
+  <ul>
+  @foreach(ProjecTechnology join in Model.JoinEntities)
+  {
+    <li>@join.Item.Title</li>
+    @using (Html.BeginForm("DeleteJoin", "Technologies"))
+    {
+      @Html.Hidden("joinId", @join.ProjectTechnologyId)
+      <input type="submit" value="Delete" />
+    }
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<p>@Html.ActionLink("Edit Technology", "Edit", new { id = Model.TechnologyId })</p>
+<p>@Html.ActionLink("Delete Technology", "Delete", new { id = Model.TechnologyId })</p>

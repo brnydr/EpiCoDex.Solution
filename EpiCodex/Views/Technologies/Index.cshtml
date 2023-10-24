@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";     
+}
+
+@using EpiCodex.Models
+
+<h1>Technologies</h1>
+
+@if (Model.Count == 0)
+{
+    <p>No technologies added.</p>
+}
+
+@foreach (Technology tech in Model)
+{
+  <li>@Html.ActionLink($"{tech.Type}", "Details", new { id = tech.TechnologyId }) </li>
+}
+
+
+  
+  
+<p>@Html.ActionLink("Add new technology", "Create")</p>
+
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

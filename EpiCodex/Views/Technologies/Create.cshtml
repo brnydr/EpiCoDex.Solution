@@ -1,0 +1,14 @@
+@model EpiCodex.Models.Technology
+
+<h4>Add a new tech item</h4>
+
+<p>@Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Type)
+  @Html.TextBoxFor(model => model.Type)
+
+  <input type="submit" value="Add new item" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all items", "Index")</p>

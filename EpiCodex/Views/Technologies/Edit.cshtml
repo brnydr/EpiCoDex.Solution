@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model EpiCodex.Models.Technology
+
+<h2>Edit</h2>
+
+<h4>Edit this technology: @Html.DisplayFor(model => model.Type)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.TechnologyId)
+
+    @Html.LabelFor(model => model.Type)
+    @Html.EditorFor(model => model.Type)
+
+    <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
