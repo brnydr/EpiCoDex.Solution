@@ -1,0 +1,17 @@
+@model EpiCodex.Models.Project
+
+<h2>Add a Technology</h2>
+
+<h4>Add a technology to this project: @Html.DisplayFor(model => model.Title)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.ProjectId);
+
+  @Html.Label("Select Technology");
+  @Html.DropDownList("TechnologyId");
+
+  <input type="submit" value="Save"/>
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>

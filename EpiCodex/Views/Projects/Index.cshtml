@@ -1,0 +1,23 @@
+@using EpiCodex.Models;
+
+<h1>Projects for @User.Identity.Name</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No projects have been added yet!</h3>
+} 
+else
+{
+  <ul>
+    @foreach (Project project in Model)
+    {
+      <li>@Html.ActionLink($"{project.Title}", "Details", new { id = project.ProjectId })</li>
+    }
+  </ul>
+}
+
+<p>@Html.ActionLink("Add new project", "Create")</p>
+@using (Html.BeginForm("LogOff", "Account"))
+{
+  <input type="submit" class="btn btn-primary" value="Log out" />
+}

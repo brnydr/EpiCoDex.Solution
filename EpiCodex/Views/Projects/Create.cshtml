@@ -1,0 +1,15 @@
+@model EpiCodex.Models.Project
+
+<h4>Add a new Project</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Title)
+  @Html.TextBoxFor(model => model.Title)
+
+  @Html.LabelFor(model => model.Description)
+  @Html.TextBoxFor(model => model.Description)
+
+  <input type="submit" value="Add new Project" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all projects", "Index")</p>
