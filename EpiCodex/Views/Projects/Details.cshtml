@@ -7,14 +7,17 @@
 <h2>Project Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Title): @Html.DisplayFor(model => model.Title)<h3>
-
+<ul>
+  <li>@Html.DisplayFor(model=>model.Headline)</li>
+  <li><a href=@Html.DisplayFor(model=>model.GithubLink)>Github Link</a></li>
+</ul>
 @if(@Model.JoinEntities.Count == 0)
 {
   <p>This project does not have any technologies yet!</p>
 }
 else
 {
-  <h4>This item has the following tags:</h4>
+  <h4>This project uses the following technologies:</h4>
   <ul>
     @foreach(ProjectTechnology join in Model.JoinEntities)
     {

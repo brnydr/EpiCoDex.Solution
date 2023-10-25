@@ -9,7 +9,11 @@ public class Project
   [Required(ErrorMessage = "Please enter a title for your project.")]
   public string Title { get;  set;}
 
+  public string Headline{ get; set; }
+
   public string Description{ get; set; }
+
+  public string GithubLink { get; set; }
 
   public ApplicationUser User{ get; set; }
 

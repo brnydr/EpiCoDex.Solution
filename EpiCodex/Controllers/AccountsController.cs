@@ -9,13 +9,13 @@ using Microsoft.EntityFrameworkCore.Migrations.Operations;
 
 namespace EpiCodex.Controllers;
 
-public class AccountController : Controller
+public class AccountsController : Controller
 {
   private readonly EpiCodexContext _db;
   private readonly UserManager<ApplicationUser> _userManager;
   private readonly SignInManager<ApplicationUser> _signInManager;
 
-  public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, EpiCodexContext db)
+  public AccountsController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, EpiCodexContext db)
   {
     _userManager = userManager;
     _signInManager = signInManager;

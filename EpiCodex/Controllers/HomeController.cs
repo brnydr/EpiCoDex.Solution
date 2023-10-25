@@ -19,7 +19,6 @@ namespace EpiCodex.Controllers
         _db = db;
       }
 
-    
     public async Task<ActionResult> Index()
     {
         string userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -33,7 +32,6 @@ namespace EpiCodex.Controllers
           model.Add("projects", projects);
         }
         return View(model);
-
     }
   }
 }

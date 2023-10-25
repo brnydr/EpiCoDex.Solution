@@ -74,7 +74,7 @@ public class TechnologiesController: Controller
   public ActionResult DeleteJoin(int joinId)
   {
     ProjectTechnology joinEntry = _db.ProjectTechnologies.FirstOrDefault(entry => entry.ProjectTechnologyId == joinId);
-    _db.ItemTags.Remove(joinEntry);
+    _db.ProjectTechnologies.Remove(joinEntry);
     _db.SaveChanges();
     return RedirectToAction("Index");
   }

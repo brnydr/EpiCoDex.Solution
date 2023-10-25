@@ -1,4 +1,3 @@
-
 namespace EpiCodex.Models;
 
 public class ProjectTechnology
